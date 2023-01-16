@@ -11,6 +11,13 @@ $users = $usersArray['users'];
 $errors = [];
 $vide = '<i class="bi bi-exclamation-circle-fill"></i> Champ obligatoire';
 
+// Cookie thème
+if (isset($_COOKIE['mode'])) {
+    $mode = $_COOKIE['mode'];
+} else {
+    $mode = 'light';
+}
+
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     // Vérification si les champs sont vides
@@ -56,9 +63,21 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 }
 
 $message = [];
-if (isset($_GET['logout'])){
+if (isset($_GET['logout'])) {
     session_destroy();
-    $message['logout'] = "Vous avez bien été déconnecté(e).";
+    $message['logout'] = '
+    <div class="position-fixed  end-0 p-3" style="z-index: 11">
+        <div aria-live="polite" aria-atomic="true" class=" d-flex justify-content-end align-items-end">
+            <div class="toast show align-items-center text-bg-primary border-0" role="alert" aria-live="assertive" aria-atomic="true">
+                <div class="d-flex">
+                    <div class="toast-body">
+                        Vous avez bien été déconnecté(e).
+                    </div>
+                    <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+                </div>
+            </div>
+        </div>
+    </div>';
 }
 
 

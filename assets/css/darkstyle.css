@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+body {
+    overflow-x: hidden;
+    background-image: url(../../dark.svg);
+    background-size: cover;
+    background-attachment:fixed ;
+
+   
+}
+
+
+@media only screen and (max-width: 600px) {
+    body {
+        height: 100vh !important;
+
+        overflow-x: hidden;
+        background-image: url(../../dark.svg);
+        background-position: center;
+        background-size: cover !important;
+        background-repeat: no-repeat;
+        background-attachment:fixed ;
+    }
+}
+
+header, footer, .card {
+    background-color: rgba(240, 248, 255, 0.725) !important;
+    font-family: 'Poppins', sans-serif;
+}
+
+.fixed-bottom {
+    background-color: rgba(240, 248, 255, 0.725) !important;
+}
+
+div.card.m-5 {
+    width: 30rem;
+    padding: 0;
+    border: 0;
+}
+div.card.m-5 img {
+    height: 20rem;
+    object-fit: cover;
+}
+
+.row,
+.col {
+    padding: 1rem;
+    font-family: 'Poppins', sans-serif !important;
+    
+}
+
+
+.card.cardpics {
+    padding: 0;
+    margin: 1rem;
+    border: 0;
+}
+
+.card.cardpics img {
+    object-fit: cover;
+    height: 300px !important;
+}
